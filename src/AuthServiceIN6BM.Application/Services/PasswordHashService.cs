@@ -64,8 +64,7 @@ public class PasswordHashService : IPasswordHashService
             Console.WriteLine($"[DEBUG] Exception in VerityPassword: {ex.Message}");
             return false;
         }
-    }
- 
+     }
     private bool VerifyArgon2StandardFormat(string password, string hashedPassword)
     {
         try

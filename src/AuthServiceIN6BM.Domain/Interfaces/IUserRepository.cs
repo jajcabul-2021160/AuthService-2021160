@@ -1,11 +1,11 @@
 
 using AuthServiceIN6BM.Domain.Entities;
-namespace AuthServiceIN6BM.Domain.Interface;
+namespace AuthServiceIN6BM.Domain.Interfaces;
 
 public interface IUserRepository
 {
-    Task<User> createAsync(User user);
-    Task<User> GetByAsync(string id);
+    Task<User> CreateAsync(User user);
+    Task<User> GetByIdAsync(string id);
     Task<User?> GetByEmailAsync(string email);
     Task<User?> GetByUsernameAsync(string username);
     Task<User?> GetByEmailVerificationTokenAsync(string token);
