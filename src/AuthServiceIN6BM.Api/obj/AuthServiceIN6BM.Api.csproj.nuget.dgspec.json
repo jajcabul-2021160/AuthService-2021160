@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthServiceIN6BM.Api\\AuthServiceIN6BM.Api.csproj": {}
+    "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthserviceIN6BM.Api\\AuthServiceIN6BM.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthServiceIN6BM.Api\\AuthServiceIN6BM.Api.csproj": {
+    "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthserviceIN6BM.Api\\AuthServiceIN6BM.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthServiceIN6BM.Api\\AuthServiceIN6BM.Api.csproj",
+        "projectUniqueName": "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthserviceIN6BM.Api\\AuthServiceIN6BM.Api.csproj",
         "projectName": "AuthServiceIN6BM.Api",
-        "projectPath": "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthServiceIN6BM.Api\\AuthServiceIN6BM.Api.csproj",
+        "projectPath": "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthserviceIN6BM.Api\\AuthServiceIN6BM.Api.csproj",
         "packagesPath": "C:\\Users\\informatica\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthServiceIN6BM.Api\\obj\\",
+        "outputPath": "C:\\Users\\informatica\\Documents\\AuthserviceIN6BM\\src\\AuthserviceIN6BM.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\informatica\\AppData\\Roaming\\NuGet\\NuGet.Config"

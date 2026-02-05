@@ -15,3 +15,6 @@ C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Persistence
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Persistence\obj\Debug\net8.0\refint\AuthServiceIN6BM.Persistence.dll
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Persistence\obj\Debug\net8.0\AuthServiceIN6BM.Persistence.pdb
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Persistence\obj\Debug\net8.0\ref\AuthServiceIN6BM.Persistence.dll
+C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Persistence\obj\Debug\net8.0\AuthServiceIN6BM.Persistence.sourcelink.json
+C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Persistence\bin\Debug\net8.0\AuthServiceIN6BM.Persistence.runtimeconfig.json
+C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Persistence\obj\Debug\net8.0\AuthServiceIN6BM.Persistence.genruntimeconfig.cache

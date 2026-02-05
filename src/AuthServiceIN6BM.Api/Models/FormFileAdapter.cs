@@ -1,13 +1,13 @@
-using AuthServiceIN6BM.Aplication.Interfaces;
+using AuthServiceIN6BM.Application.Interfaces;
 
 namespace AuthServiceIN6BM.Api.Models;
 
 public class FormFileAdapter : IFileData
 {
  private readonly IFormFile _formFile;
- private byte[]? _data
+ private byte[]? _data;
  public FormFileAdapter(IFormFile formFile){
-    ArgumNullException.ThrowIfNull(formFile):
+    ArgumNullException.ThrowIfNull(formFile);
     _formFile = formFile;
  }
 
@@ -17,6 +17,7 @@ public class FormFileAdapter : IFileData
 
         if(_data == nul){
             using var memoryStream = new MemoryStream();
+        
             _formFile.CopyTo(memoryStream);
             _data = memoryStream.ToArray();
         }

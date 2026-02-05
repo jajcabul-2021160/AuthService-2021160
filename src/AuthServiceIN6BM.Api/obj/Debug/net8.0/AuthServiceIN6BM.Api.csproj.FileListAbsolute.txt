@@ -37,3 +37,4 @@ C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Api\obj\Deb
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Api\obj\Debug\net8.0\AuthServiceIN6BM.Api.pdb
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Api\obj\Debug\net8.0\AuthServiceIN6BM.Api.genruntimeconfig.cache
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Api\obj\Debug\net8.0\ref\AuthServiceIN6BM.Api.dll
+C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthserviceIN6BM.Api\obj\Debug\net8.0\AuthServiceIN6BM.Api.sourcelink.json

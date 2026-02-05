@@ -1,12 +1,12 @@
 using AuthServiceIN6BM.Domain.Entities;
-using AuthServiceIN6BM.Domain.Interfaces;
+using AuthServiceIN6BM.Domain.Interface;
 using AuthServiceIN6BM.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
-using Npgsql.Internal;
  
 namespace AuthServiceIN6BM.Persistence.Repositories;
  
 public class RoleRepository(ApplicationDbContext context) : IRoleRepository
+
 {
     public async Task<Role?> GetByNameAsync(string roleName)
     {
@@ -45,4 +45,3 @@ public class RoleRepository(ApplicationDbContext context) : IRoleRepository
         return roles;
     }
 }
- 

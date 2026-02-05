@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace AuthServiceIN6BM.Api.ModelBinders;
 public class FileDataModelBinder : IModelBinder
 {
-    public Task BinModelAsync(ModelBidingContext bidingContext)
+    public Task BindModelAsync(ModelBidingContext bidingContext)
     {
         ArgumentNullException.ThrowIfNull(bidingContext);
  

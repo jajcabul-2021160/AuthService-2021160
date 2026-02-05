@@ -13,3 +13,4 @@ C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Application
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Application\obj\Debug\net8.0\refint\AuthServiceIN6BM.Application.dll
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Application\obj\Debug\net8.0\AuthServiceIN6BM.Application.pdb
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Application\obj\Debug\net8.0\ref\AuthServiceIN6BM.Application.dll
+C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Application\obj\Debug\net8.0\AuthServiceIN6BM.Application.sourcelink.json

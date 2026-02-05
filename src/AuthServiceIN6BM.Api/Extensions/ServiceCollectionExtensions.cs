@@ -10,8 +10,8 @@ public static class ServiceCollectionExtensions
  public static IserviceCollection AddAplicationServices(this IServiceCollection services, IConfiguration configuration)
  {
 services.AddDbContext<ApplicatoDbContext>(options =>
- options.UserNpgsql(configuration.GetConnectionString("DefaultConnection"))
- .userSnakeCaseNamingConventions()
+ options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
+ .userSnakeCaseNamingConvention()
 );
 
 services.AddScoped<IUserRepository, UserRepository>();

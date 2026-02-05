@@ -3,10 +3,8 @@ namespace AuthServiceIN6BM.Domain.Interface;
 
 public interface IRoleRepository
 {
-    
-Task<Role?> GetByNameAsync(string name);
-Task<int> CountUsersInRoleAsync(string roleName);
-Task<IReadOnlyList<User>> GetUsersByRoleAsync(string roleName);
-Task<IReadOnlyList<string>> GetUserRoleNameAsync(string userId);
-
+    Task<Role?> GetByNameAsync(string name);
+    Task<int> CountUsersInRoleAsync(string roleName);
+    Task<IReadOnlyList<User>> GetUsersByRoleAsync(string roleName);
+    Task<IReadOnlyList<string>> GetUserRoleNamesAsync(string userId);
 }

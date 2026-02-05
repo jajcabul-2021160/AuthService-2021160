@@ -9,3 +9,4 @@ C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Domain\obj\
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Domain\obj\Debug\net8.0\refint\AuthServiceIN6BM.Domain.dll
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Domain\obj\Debug\net8.0\AuthServiceIN6BM.Domain.pdb
 C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Domain\obj\Debug\net8.0\ref\AuthServiceIN6BM.Domain.dll
+C:\Users\informatica\Documents\AuthserviceIN6BM\src\AuthServiceIN6BM.Domain\obj\Debug\net8.0\AuthServiceIN6BM.Domain.sourcelink.json

@@ -8,14 +8,14 @@ using Microsoft.AspNetCore.Hosting.Server.Features;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.host.UseSerilog((context, services, loggerConfiguration) => 
+builder.Host.UseSerilog((context, services, loggerConfiguration) => 
 loggerConfiguration
 .ReadFrom.Configuration(context.Configuration)
 .ReadFrom.Services(services));
 
 builder.Services.AddControllers(option =>
 {
-    options.ModelBinderProvider.Insert(0, new FileDataModelBinderProvider());
+    options.ModelBinderProviders.Insert(0, new FileDataModelBinderProvider());
 })
 .AddJsonOptions(o => 
 {
@@ -24,7 +24,7 @@ o.JsonSerializerOptions.PropertyNameingPolicy = System.Text.Json.JsonNamingPolic
 }
 );
 
-builder.Services.AddAplicationServices(builder.configuration);
+builder.Services.AddAplicationServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -67,22 +67,22 @@ app.UseSecurityHeaders(policies => policies
 // Core middlewares
 app.UseHttpsRedirection();
 app.UseCors(DefaultCorsPolicy);
-app.UseRateLimiter();
-app.UseAuthentication();
-app.UseAuthorization();
+//app.UseRateLimiter();
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 app.MapController();
 
-app.MapHelthChecks("/health");
+app.MapHealthChecks("/health");
 
 
 app.MapGet("/health", () =>
 {
   var response = new{
-    status = "Healthy"
+    status = "Healthy",
     timestamps = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
   };
-  return Results.ok(response);
+  return Results.Ok(response);
 });
 
 // Startup log: addresses and health endpoint
