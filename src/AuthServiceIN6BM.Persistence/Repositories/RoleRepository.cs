@@ -1,5 +1,5 @@
 using AuthServiceIN6BM.Domain.Entities;
-using AuthServiceIN6BM.Domain.Interface;
+using AuthServiceIN6BM.Domain.Interfaces;
 using AuthServiceIN6BM.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
  

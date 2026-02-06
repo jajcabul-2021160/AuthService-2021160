@@ -8,5 +8,5 @@ public const string USER_ROLE = "USER_ROLE";
 
 
 
-public static readonly string [] AllowedRole = {ADMIN_ROLE, USER_ROLE};
+public static readonly string [] AllowedRoles = {ADMIN_ROLE, USER_ROLE};
 }

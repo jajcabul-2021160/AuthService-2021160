@@ -1,30 +1,31 @@
 using AuthServiceIN6BM.Persistence.Data;
+using AuthServiceIN6BM.Api.Middlewares;
 using AuthServiceIN6BM.Api.Extensions;
 using AuthServiceIN6BM.Api.ModelBinders;
 using Serilog;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.UseSerilog((context, services, loggerConfiguration) => 
-loggerConfiguration
-.ReadFrom.Configuration(context.Configuration)
-.ReadFrom.Services(services));
+builder.Host.UseSerilog((context, services, loggerConfiguration) =>
+    loggerConfiguration
+        .ReadFrom.Configuration(context.Configuration)
+        .ReadFrom.Services(services));
 
-builder.Services.AddControllers(option =>
+builder.Services.AddControllers(options =>
 {
     options.ModelBinderProviders.Insert(0, new FileDataModelBinderProvider());
 })
-.AddJsonOptions(o => 
+.AddJsonOptions(o =>
 {
-o.JsonSerializerOptions.PropertyNameingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+    o.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+});
 
-}
-);
-
-builder.Services.AddAplicationServices(builder.Configuration);
+builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddApiDocumentation();
+builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.AddRateLimitingPolicies();
 
 var app = builder.Build();
 
@@ -37,7 +38,7 @@ if (app.Environment.IsDevelopment())
 
 // Add Serilog request logging
 app.UseSerilogRequestLogging();
- 
+
 // Add Security Headers using NetEscapades package
 app.UseSecurityHeaders(policies => policies
     .AddDefaultSecurityHeaders()
@@ -63,26 +64,26 @@ app.UseSecurityHeaders(policies => policies
 );
 
 // Global exception handling
-
+app.UseMiddleware<GlobalExceptionMiddleware>();
 // Core middlewares
 app.UseHttpsRedirection();
-app.UseCors(DefaultCorsPolicy);
-//app.UseRateLimiter();
-//app.UseAuthentication();
-//app.UseAuthorization();
+app.UseCors("DefaultCorsPolicy");
+app.UseRateLimiter();
+app.UseAuthentication();
+app.UseAuthorization();
 
-app.MapController();
+app.MapControllers();
 
 app.MapHealthChecks("/health");
 
-
 app.MapGet("/health", () =>
 {
-  var response = new{
-    status = "Healthy",
-    timestamps = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
-  };
-  return Results.Ok(response);
+    var response = new
+    {
+        status = "Healthy",
+        timestamps = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
+    };
+    return Results.Ok(response);
 });
 
 // Startup log: addresses and health endpoint
@@ -94,7 +95,7 @@ app.Lifetime.ApplicationStarted.Register(() =>
         var server = app.Services.GetRequiredService<IServer>();
         var addressesFeature = server.Features.Get<IServerAddressesFeature>();
         var addresses = (IEnumerable<string>?)addressesFeature?.Addresses ?? app.Urls;
- 
+
         if (addresses != null && addresses.Any())
         {
             foreach (var addr in addresses)
@@ -119,17 +120,17 @@ using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
- 
+
     try
     {
         logger.LogInformation("Checking database connection...");
- 
+
         // Ensure database is created (similar to Sequelize sync in Node.js)
         await context.Database.EnsureCreatedAsync();
- 
+
         logger.LogInformation("Database ready. Running seed data...");
         await DataSeeder.SeedAsync(context);
- 
+
         logger.LogInformation("Database initialization completed successfully");
     }
     catch (Exception ex)
@@ -140,5 +141,3 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.Run();
-
-

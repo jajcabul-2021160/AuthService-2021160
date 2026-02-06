@@ -4,30 +4,30 @@ namespace AuthServiceIN6BM.Api.Models;
 
 public class FormFileAdapter : IFileData
 {
- private readonly IFormFile _formFile;
- private byte[]? _data;
- public FormFileAdapter(IFormFile formFile){
-    ArgumNullException.ThrowIfNull(formFile);
-    _formFile = formFile;
- }
+    private readonly IFormFile _formFile;
+    private byte[]? _data;
 
- public byte[] Data{
-
-    get{
-
-        if(_data == nul){
-            using var memoryStream = new MemoryStream();
-        
-            _formFile.CopyTo(memoryStream);
-            _data = memoryStream.ToArray();
-        }
-        return _data;
+    public FormFileAdapter(IFormFile formFile)
+    {
+        ArgumentNullException.ThrowIfNull(formFile);
+        _formFile = formFile;
     }
- }
 
- public string ContentType => _formFile.ContentType;
-public string FileName => _formFile.FileName;
- public long Size => _formFile.Length;
+    public byte[] Data
+    {
+        get
+        {
+            if(_data == null)
+            {
+                using var memoryStream = new MemoryStream();
+                _formFile.CopyTo(memoryStream);
+                _data = memoryStream.ToArray();
+            }
+            return _data;
+        }
+    }
 
-
+    public string ContentType => _formFile.ContentType;
+    public string FileName => _formFile.FileName;
+    public long Size => _formFile.Length;
 }
